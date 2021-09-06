@@ -1,29 +1,91 @@
-### Instructions for running the API locally
+# The HADEDA WEB APP - Team Chakra
+## Developed with the MERN stack
+### Introduction
 
-1. Install Python `3.8.5` on your system. 
 
-2. Create a virtual environment using `conda` or `venv`
+We built a full stack - application and deployed it to Heroku at ********** that works with real-world data to solve a real-world challenge, with a focus on user demand:
+- Using React for the front end.
+- Using REST-API with a Node.js and Express.js server.
+- Using SQL and the Sequelize ORM for the database.
+- Using FETCH, POST, PUT etc. for retrieving, adding, updating, and deleting data.
+- Deployed using Heroku (with data).
+- Offering a polished UI, is responsive and is interactive 
+- The project has a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, quality comments, etc.) and a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
-3. Activate the environment and install the required packages as shown in `requirements.txt`
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+## Contents
+- [Description](#Description)
+- [App Screenshot](#App-Screenshot)
+- [User Story](#User-Story)
+- [Concepts](#Concepts)
+- [License](#License)
+- [Author](#Author)
 
-4. Migrate your models to the Database. We will use a local Database, SQLite which is the default database for Django. Navigate to the project folder, ensure that you are in the directory where `manage.py` file exists and run the following command:
+## Description
+The HADEDA app is a full stack web-app to automate the process of redacting sensitive data from legal documents, with the goal of making The Hague more transparent.
 
-   ```bash
-   python manage.py migrate
-   ```
+For MVP we wanted to keep the length of the string smaller. But provided the chosen database tool and processing compute power supports it, there is no limitation on the length of the document that can be processed.
+These are ideas we identified to continue to build on our application even further:
+...Feature 1:Automate Publishing the redacted text to a publicly accessible database in an XML formal.
+...Feature 2: Ingest the document in the currently published format without any user interference
+...Feature 3: With time and enough training data, complete the redaction process minimizing any user input.
+...Feature 4: Increase security features and encryption in the data ingestion process.
 
-   This will create the tables we require in the SQL database.
+## App Screenshot
+![](images/HADEDA.png)
 
-5. This is the last step, to run the app just use:
 
-   ```python
-   python manage.py runserver
-   ```
+## User Story
 
-   The server should start running and the API will now be available at `http://127.0.0.1:8000/`
+```text
 
-6. You can use the `Django REST Framework` interface or use something like `Postman` to send your requests.
+Description:
+We built the HADEDA app to redact confidential data such as personal data and corporate information. We built a full stack - application with a REACT.js client, REST API, and MySQL database and used spaCy an open-source software library for advanced natural language processing which supports deep learning workflows connecting models trained by popular machine learning libraries. We used its features for text categorization and named entity recognition (NER). Prebuilt statistical neural network models to perform these task are available for English, German, Greek, Spanish, Portuguese, French, Italian, Dutch, Lithuanian and Norwegian.
+
+Motivation for development:
+Legislation obliges the Hague to be transparent. Legal decisions and transactions of legislative bodies can only be made public if confidential data such as personal data and corporate information are erased or redacted. Erasing personal data. Currently, only 3% of available data is released. 97% is not yet released due to time consuming redaction process. 
+
+User story:
+AS an organization who wants to be more transparent, 
+I WANT to redact sensitive data from documentation that I want to make public
+```
+
+## Concepts
+
+In this project we used the following packages:
+```text
+"@apollo/react-hooks": "^3.1.3", 
+"@testing-library/jest-dom": "^4.2.4", 
+"apollo-boost": "^0.4.7", 
+"apollo-link-context": "^1.0.20", 
+"apollo-server-express": "^2.11.0",
+"express": "^4.17.1", 
+"sequelize": "^5.9.7", 
+"react": "^16.13.1", 
+"react-dom": "^16.13.1", 
+"react-router-dom": "^5.1.2", 
+"react-scripts": “3.4.1”
+"spaCy"
+"REST-API"
+```
+
+## License
+[MIT License](./LICENSE)
+![license](https://img.shields.io/badge/License-MIT-blue)
+
+## Author
+### Chiristopher Maxwell, Anita Ganti, Yogendra Pawar
+
+View the authors' portfolio at:  
+- https://anitapeppercorn.github.io/react-portfolio/
+
+- https://withchristopher.github.io/react-portfolio/
+
+- https://iofall.github.io/react-portfolio/
+
+
+[Table of Contents](#Contents)
+[Back to Top](#HADEDA)
+
+
+

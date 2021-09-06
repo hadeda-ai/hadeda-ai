@@ -1,6 +1,6 @@
 ### Instructions for running the API locally
 
-1. Install Python `3.8.5` on your system.
+1. Install Python `3.8.5` on your system. 
 
 2. Create a virtual environment using `conda` or `venv`
 

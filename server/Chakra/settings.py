@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-#import django_heroku
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1234'
+SECRET_KEY = os.environ.get('CHAKRA_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG') == 'True')
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'team-chakra-thlta.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'team-chakra-thlta.herokuapp.com', 'https://d1huqf071yx8vn.cloudfront.net']
 
 
 # Application definition
@@ -47,13 +47,12 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'Chakra.urls'
@@ -126,4 +125,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#django_heroku.settings(locals(), allowed_hosts=False, secret_key=False)
+django_heroku.settings(locals(), allowed_hosts=False, secret_key=False)

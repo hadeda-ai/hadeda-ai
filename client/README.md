@@ -1,5 +1,11 @@
-# react-with-webpack
+# react - 
+client side React application
 
-This repo contains sample code of how to setup a react app with Webpack and Babel.
+## Deploy locally 
 
-Find the whole tutorial over here: https://anubhav7x.hashnode.dev/setup-a-react-app-using-webpack-and-babel
+```
+git clone ``
+cd hadeda-ai/client
+npm install
+npm run start
+```

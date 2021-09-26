@@ -2,10 +2,10 @@ import axios from "axios";
 
 export default axios.create({
   // Dev environment
-  baseURL: "http://localhost:8000/",
+  // baseURL: "http://localhost:8000/",
   // Demo environment
-  // baseURL: "https://team-chakra-thlta.herokuapp.com/",
+  baseURL: "https://chakra-server.herokuapp.com/",
   headers: {
-    "Content-type": "application/x-www-form-urlencoded"
+    "Content-type": "application/json"
   }
 });

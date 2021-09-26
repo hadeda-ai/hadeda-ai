@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link, BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
 
@@ -12,6 +12,7 @@ import Output from "./components/Output";
 function App() {
   return (
     <div>
+    <Router>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <Link to="/home" className="navbar-brand">
          HADEDA
@@ -36,13 +37,16 @@ function App() {
       </nav>
 
       <div className="container mt-3">
+      
         <Switch>
           <Route exact path="/home" component={Home} />
           <Route exact path="/submit" component={Submit} />
           <Route path="/review/:id" component={Review} />
           <Route path="/output/:id" component={Output} />
+          <Route component={Home} />
         </Switch>
       </div>
+      </Router>
     </div>
   );
 }
